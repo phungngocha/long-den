@@ -1,0 +1,48 @@
+<!-- header.html -->
+<nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-danger" href="index.html">🏮 tên cửa hàng
+    </a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Sản phẩm</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Liên hệ</a></li>
+      </ul>
+
+      <!-- Search -->
+      <form class="d-flex me-3 search-bar">
+        <input class="form-control rounded-pill" type="search" placeholder="Tìm lồng đèn...">
+        <i class="bi bi-search"></i>
+      </form>
+
+      <!-- Cart -->
+      <a href="cart.html" class="btn btn-outline-danger position-relative" id="cart-btn">
+        <i class="bi bi-cart3"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">0</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // ✅ Xác định trang hiện tại và thêm class 'active'
+  document.addEventListener("DOMContentLoaded", () => {
+    const currentPage = window.location.pathname.split("/").pop();
+    const links = document.querySelectorAll(".navbar-nav .nav-link");
+
+    links.forEach(link => {
+      const href = link.getAttribute("href");
+      if (href === currentPage) {
+        link.classList.add("active", "text-danger", "fw-bold");
+      } else {
+        link.classList.remove("active", "text-danger", "fw-bold");
+      }
+    });
+  });
+</script>
