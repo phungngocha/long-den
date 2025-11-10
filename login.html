@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng nhập</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container py-5">
+  <div class="card mx-auto shadow" style="max-width: 400px;">
+    <div class="card-body">
+      <h3 class="text-center text-danger fw-bold mb-4">Đăng nhập</h3>
+      <form id="login-form">
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Mật khẩu</label>
+          <input type="password" class="form-control" id="password" required>
+        </div>
+        <button type="submit" class="btn btn-danger w-100">Đăng nhập</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById("login-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  // Giả lập xác thực (trong thực tế bạn sẽ gọi API)
+  if (email && password) {
+    const user = {
+      name: email.split("@")[0], // tên lấy từ email
+      email: email,
+      avatar: "https://cdn-icons-png.flaticon.com/512/219/219983.png"
+    };
+
+    localStorage.setItem("user", JSON.stringify(user));
+    alert("🎉 Đăng nhập thành công!");
+    window.location.href = "index.html";
+  } else {
+    alert("❌ Vui lòng nhập đầy đủ thông tin!");
+  }
+});
+</script>
+</body>
+</html>

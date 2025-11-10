@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Giỏ hàng - Lồng đèn Việt</title>
+  <title>LINHĐĂNG</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
@@ -96,10 +96,10 @@
               <input class="form-check-input" type="radio" name="payment" id="momo" value="Ví Momo">
               <label class="form-check-label" for="momo">📱 Ví Momo</label>
             </div>
-            <div class="form-check">
+            <!-- <div class="form-check">
               <input class="form-check-input" type="radio" name="payment" id="zalopay" value="ZaloPay">
               <label class="form-check-label" for="zalopay">💠 ZaloPay</label>
-            </div>
+            </div> -->
             <div class="form-check">
               <input class="form-check-input" type="radio" name="payment" id="card" value="Thẻ ngân hàng">
               <label class="form-check-label" for="card">💳 Thẻ ngân hàng</label>
@@ -110,7 +110,7 @@
         <div class="col-md-12">
           <div id="qr-section" class="qr-section">
             <h5 class="fw-bold text-danger">📷 Quét mã để thanh toán</h5>
-            <img id="qr-image" src="" alt="QR Code">
+            <img src="img/qr.png" alt="QR Code">
             <p class="text-muted">Sau khi quét và thanh toán xong, hãy nhấn “Xác nhận thanh toán”.</p>
           </div>
         </div>
@@ -128,15 +128,20 @@
 
   <!-- Nạp header & footer -->
   <script>
-    fetch("header.html")
+  // Nạp header.html vào vị trí #header
+fetch("header.html")
   .then(res => res.text())
   .then(data => {
     document.getElementById("header").innerHTML = data;
 
-    // Gọi lại các hàm sau khi header đã gắn vào DOM
+    // ✅ Sau khi header đã load -> chạy hàm cập nhật người dùng
+    handleUserDisplay();
+
+    // ✅ Các hàm cũ vẫn giữ
     if (typeof updateCartCount === "function") updateCartCount();
-    if (typeof handleSearch === "function") handleSearch(); // ✅ thêm dòng này
+    if (typeof handleSearch === "function") handleSearch();
   });
+
 
 
     fetch('footer.html')

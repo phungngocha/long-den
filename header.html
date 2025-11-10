@@ -1,7 +1,9 @@
 <!-- header.html -->
 <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm">
   <div class="container">
-    <a class="navbar-brand fw-bold text-danger" href="index.html">🏮 tên cửa hàng
+    <a class="navbar-brand fw-bold text-danger d-flex align-items-center" href="index.html">
+      <img src="img/logo1.png" alt="Logo" width="45" height="45" class="me-2 logo">
+      Linh Đăng
     </a>
     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
       <span class="navbar-toggler-icon"></span>
@@ -15,13 +17,19 @@
         <li class="nav-item"><a class="nav-link" href="contact.html">Liên hệ</a></li>
       </ul>
 
-      <!-- Search -->
+      <!-- Thanh tìm kiếm -->
       <form class="d-flex me-3 search-bar">
         <input class="form-control rounded-pill" type="search" placeholder="Tìm lồng đèn...">
         <i class="bi bi-search"></i>
       </form>
 
-      <!-- Cart -->
+      <!-- 👤 Phần người dùng -->
+      <div class="d-flex align-items-center me-3" id="user-section">
+        <a href="login.html" class="btn btn-outline-secondary me-2">Đăng nhập</a>
+        <a href="register.html" class="btn btn-danger">Đăng ký</a>
+      </div>
+
+      <!-- 🛒 Giỏ hàng -->
       <a href="cart.html" class="btn btn-outline-danger position-relative" id="cart-btn">
         <i class="bi bi-cart3"></i>
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">0</span>
@@ -30,9 +38,10 @@
   </div>
 </nav>
 
-<script>
-  // ✅ Xác định trang hiện tại và thêm class 'active'
+<!-- ======================== SCRIPT ======================== -->
+<!-- <script>
   document.addEventListener("DOMContentLoaded", () => {
+    // ✅ Xác định trang hiện tại
     const currentPage = window.location.pathname.split("/").pop();
     const links = document.querySelectorAll(".navbar-nav .nav-link");
 
@@ -44,5 +53,75 @@
         link.classList.remove("active", "text-danger", "fw-bold");
       }
     });
+
+    // ✅ Kiểm tra trạng thái đăng nhập
+    const userSection = document.getElementById("user-section");
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (user && user.name) {
+      // Thay thế nút đăng nhập/đăng ký bằng avatar và tên
+      userSection.innerHTML = `
+        <div class="dropdown">
+          <button class="btn btn-light dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="${user.avatar || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'}" 
+                 alt="Avatar" class="rounded-circle me-2 border border-1 border-danger" width="35" height="35">
+            <span class="fw-semibold text-dark">${user.name}</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+            <li><a class="dropdown-item" href="profile.html"><i class="bi bi-person-circle me-2"></i>Trang cá nhân</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="#" id="logout-btn"><i class="bi bi-box-arrow-right me-2"></i>Đăng xuất</a></li>
+          </ul>
+        </div>
+      `;
+
+      // 🧹 Xử lý đăng xuất
+      document.getElementById("logout-btn").addEventListener("click", (e) => {
+        e.preventDefault();
+        localStorage.removeItem("user");
+        location.reload();
+      });
+    }
   });
-</script>
+</script> -->
+
+<!-- ======================== STYLE ======================== -->
+<style>
+  /* 🌸 Logo thương hiệu */
+  .logo {
+    height: 50px;
+    width: 60px;
+    border-radius: 10px;
+    mix-blend-mode: multiply;
+    filter: brightness(1.05) contrast(1.1);
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  .logo:hover {
+    transform: scale(1.08);
+    filter: brightness(1.2);
+  }
+
+  /* ✨ Thương hiệu */
+  .navbar-brand {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  /* 🎯 Căn giữa dropdown user */
+  #user-section .dropdown-toggle {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    padding: 5px 10px;
+  }
+
+  #user-section .dropdown-toggle:hover {
+    background-color: #f8f9fa;
+  }
+
+  .dropdown-menu {
+    min-width: 180px;
+    border-radius: 10px;
+  }
+</style>

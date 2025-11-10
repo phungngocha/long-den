@@ -3,10 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Giới thiệu - LANTERNS</title>
+  <title>LINHĐĂNG - Giới thiệu</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Banner đầu trang */
+    .intro-banner {
+      background: url('img/ẢNH\ MOCKUP-14.png') center/cover no-repeat;
+      height: 450px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-shadow: 1px 1px 8px rgba(0,0,0,0.7);
+      border-radius: 12px;
+      margin-bottom: 50px;
+    }
+
+    .intro-banner h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    /* Khối nội dung */
+    .intro-section {
+      padding: 50px 30px;
+      background-color: #fff8f0;
+      border-radius: 12px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.05);
+    }
+
+    .intro-section p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #4a4a4a;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Hiệu ứng ảnh */
+    .intro-section img {
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      max-width: 100%;
+    }
+
+    .intro-section img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    /* Bố cục responsive */
+    @media (min-width: 768px) {
+      .intro-content {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+      }
+
+      .intro-content .text {
+        flex: 1;
+      }
+
+      .intro-content .image {
+        flex: 1;
+      }
+    }
+
+    /* Tiêu đề phụ */
+    .intro-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #d9534f;
+      margin-bottom: 1.5rem;
+    }
+  </style>
 </head>
 <body>
 
@@ -14,24 +87,53 @@
   <div id="header"></div>
 
   <main class="container py-5">
-    <h1 class="fw-bold text-danger mb-4">Giới thiệu</h1>
-    <p>Cửa hàng Lồng Đèn là nơi hội tụ những chiếc đèn thủ công tinh xảo, được làm từ tay các nghệ nhân với tình yêu văn hoá Á Đông. Chúng tôi mong muốn mang lại ánh sáng, sự ấm áp và nét truyền thống đến mọi không gian sống.</p>
-    <img src="https://i.imgur.com/BIJ1blm.png" class="img-fluid rounded shadow-lg mt-4" alt="Lanterns">
+    <!-- Banner -->
+    <div class="intro-banner mb-5">
+      <h1>Chào mừng đến với Linh Đăng</h1>
+    </div>
+
+    <!-- Giới thiệu -->
+    <div class="intro-section">
+      <div class="intro-content">
+        <div class="text">
+          <h2>Về Linh Đăng</h2>
+          <p>
+            Có những món đồ chơi mà chúng ta lớn lên cùng, rồi cất chúng vào một góc ký ức. Đó là những con chuồn chuồn tre đậu trên ngón tay, những chiếc đèn lồng lung linh trong đêm Rằm, hay những chú tò he ngộ nghĩnh. Chúng tôi, những người sáng lập Linh Đăng, tin rằng tuổi thơ đẹp nhất là tuổi thơ được chơi đùa, được sáng tạo từ những điều bình dị, thân thuộc nhất.
+          </p>
+          <p>
+            Nhưng những món đồ chơi ấy đang dần mai một. Chúng tôi đã tự hỏi: Làm sao để mang những vẻ đẹp ấy trở lại trong một thế giới đầy rẫy màn hình và đồ chơi nhựa ngoại nhập? Và Linh Đăng ra đời.
+          </p>
+          <p>
+            Chúng tôi không chỉ đơn thuần sao chép lại những món đồ chơi cũ. Chúng tôi mang đến một cách chơi mới mẻ: lắp ghép. Mỗi bộ đồ chơi Linh Đăng là sự kết hợp độc đáo giữa những câu chuyện dân gian và tư duy logic của thời hiện đại. Từ những mảnh ghép gỗ, tre, giấy,... con bạn có thể tự tay tạo nên chiếc đèn lồng của riêng mình, hay một chú rối nước sống động.
+          </p>
+          <p>
+            Linh Đăng là ngọn lửa nhỏ thắp lên trong mỗi đứa trẻ niềm đam mê khám phá, sự sáng tạo không giới hạn và một tuổi thơ thật sự trọn vẹn. Chúng tôi không chỉ bán đồ chơi, chúng tôi đang cùng bạn gìn giữ và kể lại những câu chuyện của cha ông, để những giá trị văn hóa ấy mãi mãi được tiếp nối.
+          </p>
+        </div>
+        <div class="image text-center mt-4 mt-md-0">
+          <img src="img/ẢNH MOCKUP-16.png" alt="Lanterns">
+        </div>
+      </div>
+    </div>
   </main>
 
   <div id="footer"></div>
 
- <script>
-  // Nạp header.html vào vị trí #header
-  fetch("header.html")
+  <script>
+ // Nạp header.html vào vị trí #header
+fetch("header.html")
   .then(res => res.text())
   .then(data => {
     document.getElementById("header").innerHTML = data;
 
-    // Gọi lại các hàm sau khi header đã gắn vào DOM
+    // ✅ Sau khi header đã load -> chạy hàm cập nhật người dùng
+    handleUserDisplay();
+
+    // ✅ Các hàm cũ vẫn giữ
     if (typeof updateCartCount === "function") updateCartCount();
-    if (typeof handleSearch === "function") handleSearch(); // ✅ thêm dòng này
+    if (typeof handleSearch === "function") handleSearch();
   });
+
 
 
   // Nạp footer.html
@@ -40,8 +142,7 @@
     .then(data => {
       document.getElementById('footer').innerHTML = data;
     });
-</script>
-
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>

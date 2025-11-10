@@ -1,35 +1,71 @@
 <!-- footer.html -->
-<footer class="bg-dark text-light text-center py-4 mt-5">
+<footer class="bg-dark text-light pt-5 pb-4">
   <div class="container">
-    <div class="row mb-3">
-      <!-- Cột 1 -->
-      <div class="col-md-4 mb-3">
-        <h5 class="text-uppercase">Về chúng tôi</h5>
-        <p class="small">
-          <b>Lồng Đèn Việt</b> mang đến những sản phẩm thủ công tinh tế, lưu giữ nét văn hóa truyền thống qua từng ánh sáng.
+    <div class="row text-center text-md-start align-items-start mb-4">
+      <!-- Cột 1: Về chúng tôi -->
+      <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column justify-content-start">
+        <h5 class="text-uppercase fw-bold mb-3">Về chúng tôi</h5>
+        <p class="small text-secondary">
+          <b>Linh Đăng</b> – Thương hiệu đồ chơi lắp ghép dân gian Việt Nam, kết hợp văn hóa truyền thống với thiết kế sáng tạo.
         </p>
       </div>
 
-      <!-- Cột 2 -->
-      <div class="col-md-4 mb-3">
-        <h5 class="text-uppercase">Liên hệ</h5>
-        <p class="small mb-1">📍 Trường đại học FPT</p>
-        <p class="small mb-1">📞 0901 234 567</p>
-        <p class="small">✉️ support@longdenviet.vn</p>
+      <!-- Cột 2: Liên hệ -->
+      <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column justify-content-center align-items-center footer-column">
+        <h5 class="text-uppercase fw-bold mb-3">Liên hệ</h5>
+        <p class="small mb-1">📍 Hà Nội, Việt Nam</p>
+        <p class="small mb-1">📞 <a href="tel:0978856673" class="text-decoration-none text-light">0978.856.673</a></p>
+        <p class="small">✉️ <a href="mailto:contact.linhdang@gmail.com" class="text-decoration-none text-light">contact.linhdang@gmail.com</a></p>
       </div>
 
-      <!-- Cột 3 -->
-      <div class="col-md-4 mb-3">
-        <h5 class="text-uppercase">Kết nối</h5>
+      <!-- Cột 3: Kết nối -->
+      <div class="col-md-4 d-flex flex-column justify-content-center align-items-center footer-column">
+        <h5 class="text-uppercase fw-bold mb-3">Kết nối</h5>
         <div class="d-flex justify-content-center gap-3 fs-4">
-          <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="text-light"><i class="bi bi-tiktok"></i></a>
+          <a href="https://www.facebook.com/share/1GikMjHj7P/?mibextid=wwXIfr" target="_blank" class="text-light social-link">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="#" target="_blank" class="text-light social-link">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@contact.linhdang?_r=1&_t=ZS-91GEH95FyH2" target="_blank" class="text-light social-link">
+            <i class="bi bi-tiktok"></i>
+          </a>
         </div>
       </div>
     </div>
 
     <hr class="border-secondary">
-    <p class="mb-0 small">© 2025 Lồng Đèn Việt | Thiết kế bởi <b>Nhóm Sinh viên</b></p>
+
+    <p class="mb-0 text-center small text-secondary">
+      &copy; 2025 - Bản quyền thuộc về CCCP Linh Đăng
+    </p>
   </div>
+
+  <style>
+    /* Footer cột hover */
+    .footer-column:hover {
+      transform: translateY(-3px);
+      transition: 0.3s ease;
+    }
+
+    /* Hiệu ứng hover cho icon xã hội */
+    .social-link:hover {
+      color: #dc3545 !important;
+      transform: scale(1.2);
+      transition: 0.3s ease;
+    }
+
+    /* Footer text nhẹ nhàng */
+    footer p, footer a {
+      font-size: 0.9rem;
+    }
+
+    /* Cột footer */
+    @media (max-width: 767px) {
+      .footer-column {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
 </footer>
