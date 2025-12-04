@@ -10,18 +10,19 @@
     </button>
 
     <div class="collapse navbar-collapse" id="menu">
-      <!-- <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav me-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
         <li class="nav-item"><a class="nav-link" href="shop.html">Sản phẩm</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Liên hệ</a></li>
-      </ul> -->
+      </ul>
 
-      <!-- Thanh tìm kiếm -->
-      <form class="d-flex me-3 search-bar">
-        <input class="form-control rounded-pill" type="search" placeholder="Tìm lồng đèn...">
-        <i class="bi bi-search"></i>
-      </form>
+     <!-- Thanh tìm kiếm -->
+<form class="d-flex me-3 search-bar position-relative">
+  <input class="form-control rounded-pill ps-3 pe-5" type="search" placeholder="Tìm lồng đèn...">
+  <i class="bi bi-search position-absolute" style="right: 15px; top: 50%; transform: translateY(-50%); color:#6e6e6e;"></i>
+</form>
+
 
       <!-- 👤 Phần người dùng -->
       <div class="d-flex align-items-center me-3" id="user-section">
@@ -39,7 +40,7 @@
 </nav>
 
 <!-- ======================== SCRIPT ======================== -->
-<!-- <script>
+<script>
   document.addEventListener("DOMContentLoaded", () => {
     // ✅ Xác định trang hiện tại
     const currentPage = window.location.pathname.split("/").pop();
@@ -83,7 +84,7 @@
       });
     }
   });
-</script> -->
+</script>
 
 <!-- ======================== STYLE ======================== -->
 <style>
@@ -124,4 +125,111 @@
     min-width: 180px;
     border-radius: 10px;
   }
+  /* ===================== HEADER RESPONSIVE ===================== */
+
+/* Reset padding/margin khi cần */
+.navbar-nav .nav-link {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+}
+
+/* Logo responsive */
+.navbar-brand img.logo {
+  width: 45px;
+  height: 45px;
+}
+
+@media (max-width: 768px) {
+  /* Navbar padding nhỏ hơn */
+  .navbar {
+    padding: 0.4rem 1rem;
+  }
+
+  /* Brand nhỏ hơn */
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  /* Menu collapsible full width */
+  .navbar-collapse {
+    background: #fff;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  /* Thanh tìm kiếm */
+  .search-bar {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .search-bar input {
+    width: 100%;
+    padding: 8px 40px 8px 15px;
+    font-size: 0.95rem;
+  }
+  .search-bar i {
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* User section */
+  #user-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  #user-section .dropdown-toggle {
+    font-size: 0.9rem;
+    padding: 4px 8px;
+  }
+
+  #user-section .dropdown-toggle img {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Giỏ hàng */
+  #cart-btn {
+    font-size: 1.1rem;
+    padding: 6px 10px;
+  }
+
+  #cart-count {
+    font-size: 0.65rem;
+  }
+
+  /* Toggler button to top-right icon */
+  .navbar-toggler {
+    border: none;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+  }
+}
+
+/* Hover effect cho menu mobile */
+@media (max-width: 768px) {
+  .navbar-nav .nav-link:hover {
+    color: #d32f2f !important;
+  }
+  #user-section .dropdown-toggle:hover {
+    background-color: #f8f9fa;
+  }
+}
+
 </style>

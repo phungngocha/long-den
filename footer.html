@@ -1,70 +1,226 @@
-<!-- footer.html -->
-<footer class="bg-dark text-light pt-5 pb-4">
-  <div class="container">
-    <div class="row text-center text-md-start align-items-start mb-4">
-      <!-- Cột 1: Về chúng tôi -->
-      <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column justify-content-start">
-        <h5 class="text-uppercase fw-bold mb-3">Về chúng tôi</h5>
-        <p class="small text-secondary">
-          <b>Linh Đăng</b> – Thương hiệu đồ chơi lắp ghép dân gian Việt Nam, kết hợp văn hóa truyền thống với thiết kế sáng tạo.
+<footer class="footer-luxury-premium pt-5 pb-4">
+  <div class="container fade-in-up">
+
+    <!-- Logo / Brand Name -->
+    <div class="text-center mb-4">
+      <h2 class="footer-brand">LINH ĐĂNG</h2>
+      <p class="footer-tagline">Crafted Heritage · Creative Spirit · Timeless Design</p>
+      <div class="footer-divider mx-auto"></div>
+    </div>
+
+    <div class="row g-4 mt-4">
+
+      <!-- About -->
+      <div class="col-md-4 fade-item">
+        <h5 class="footer-title">Về thương hiệu</h5>
+        <p class="footer-text">
+          <strong>Linh Đăng</strong> khơi gợi tinh thần Việt bằng cách tái sinh 
+          những giá trị truyền thống vào từng sản phẩm lắp ghép độc đáo, 
+          mang nét nghệ thuật tinh tế và cảm hứng sáng tạo hiện đại.
         </p>
       </div>
 
-      <!-- Cột 2: Liên hệ -->
-      <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column justify-content-center align-items-center footer-column">
-        <h5 class="text-uppercase fw-bold mb-3">Liên hệ</h5>
-        <p class="small mb-1">📍 Hà Nội, Việt Nam</p>
-        <p class="small mb-1">📞 <a href="tel:0978856673" class="text-decoration-none text-light">0978.856.673</a></p>
-        <p class="small">✉️ <a href="mailto:contact.linhdang@gmail.com" class="text-decoration-none text-light">contact.linhdang@gmail.com</a></p>
+      <!-- Contact -->
+      <div class="col-md-4 fade-item">
+        <h5 class="footer-title">Liên hệ</h5>
+        <ul class="footer-list">
+          <li><i class="bi bi-geo-alt"></i> Hà Nội, Việt Nam</li>
+          <li><i class="bi bi-telephone"></i> <a href="tel:0978856673">0978.856.673</a></li>
+          <li><i class="bi bi-envelope"></i> <a href="mailto:contact.linhdang@gmail.com">contact.linhdang@gmail.com</a></li>
+        </ul>
       </div>
 
-      <!-- Cột 3: Kết nối -->
-      <div class="col-md-4 d-flex flex-column justify-content-center align-items-center footer-column">
-        <h5 class="text-uppercase fw-bold mb-3">Kết nối</h5>
-        <div class="d-flex justify-content-center gap-3 fs-4">
-          <a href="https://www.facebook.com/share/1GikMjHj7P/?mibextid=wwXIfr" target="_blank" class="text-light social-link">
-            <i class="bi bi-facebook"></i>
-          </a>
-          <a href="#" target="_blank" class="text-light social-link">
-            <i class="bi bi-instagram"></i>
-          </a>
-          <a href="https://www.tiktok.com/@contact.linhdang?_r=1&_t=ZS-91GEH95FyH2" target="_blank" class="text-light social-link">
-            <i class="bi bi-tiktok"></i>
-          </a>
+      <!-- Social -->
+      <div class="col-md-4 fade-item">
+        <h5 class="footer-title">Kết nối</h5>
+        <div class="footer-icons d-flex gap-3 mt-2">
+          <a href="https://www.facebook.com/share/1GikMjHj7P/?mibextid=wwXIfr" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.tiktok.com/@contact.linhdang?_r=1&_t=ZS-91GEH95FyH2" target="_blank"><i class="bi bi-tiktok"></i></a>
+          <a href="#"><i class="bi bi-bag-heart"></i></a>
         </div>
       </div>
+
     </div>
 
-    <hr class="border-secondary">
+    <!-- Chính sách -->
+    <div class="footer-policy text-center mt-5 fade-item">
+      <a href="chinhsachbaomat.html">Chính sách bảo mật</a>
+      <span>·</span>
+      <a href="terms.html">Điều khoản sử dụng</a>
+      <span>·</span>
+      <a href="return-policy.html">Chính sách đổi trả</a>
+    </div>
 
-    <p class="mb-0 text-center small text-secondary">
-      &copy; 2025 - Bản quyền thuộc về CCCP Linh Đăng
+    <hr class="footer-line mt-4">
+
+    <p class="text-center footer-copy mt-3">
+      © 2025 – CCCP Linh Đăng. All Rights Reserved.
     </p>
+
   </div>
 
   <style>
-    /* Footer cột hover */
-    .footer-column:hover {
-      transform: translateY(-3px);
-      transition: 0.3s ease;
+    /* --- PREMIUM BACKGROUND --- */
+    .footer-luxury-premium {
+      background: linear-gradient(135deg, #f0e8da, #e5d2b2, #f1e5cc, #d4c3a2);
+      background-size: 300% 300%;
+      animation: luxuryBG 10s ease infinite;
+      color: #4b4b4b;
+    }
+.footer-luxury-premium .row > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* căn giữa theo chiều ngang */
+  text-align: center;  /* căn giữa chữ */
+}
+    @keyframes luxuryBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    /* Hiệu ứng hover cho icon xã hội */
-    .social-link:hover {
-      color: #dc3545 !important;
-      transform: scale(1.2);
-      transition: 0.3s ease;
+    /* --- FADE IN EFFECT --- */
+    .fade-in-up {
+      animation: fadeUp 1.1s ease forwards;
     }
 
-    /* Footer text nhẹ nhàng */
-    footer p, footer a {
+    .fade-item {
+      opacity: 0;
+      animation: fadeUp 1.4s ease forwards;
+      animation-delay: .3s;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Branding */
+    .footer-brand {
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: #b58a42;
+      font-size: 1.9rem;
+    }
+
+    .footer-tagline {
+      font-size: .95rem;
+      color: #7d6a50;
+      letter-spacing: 1px;
+      margin-top: 5px;
+    }
+
+    .footer-divider {
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(90deg, #b99248, #e7d9b5, #b99248);
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    /* Titles */
+    .footer-title {
+        font-size: 1.2rem; /* tăng chữ tiêu đề */
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #a07a3f;
+    }
+
+    /* Text */
+    .footer-text {
+      font-size: 1rem;
+      color: #6e6659;
+      line-height: 1.6;
+    }
+
+    /* Contact List */
+    .footer-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .footer-list li {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      color: #6e6659;
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-list li i {
+      margin-right: 10px;
+      color: #b58a42;
+      font-size: 1.15rem;
+    }
+
+    .footer-list a {
+      color: #5e574d;
+      text-decoration: none;
+      transition: .3s ease;
+    }
+
+    .footer-list a:hover {
+      color: #b58a42;
+    }
+
+    /* Social icons */
+    .footer-icons a {
+      width: 50px;
+      height: 50px;
+      border: 1px solid #d4c7b2;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(4px);
+      display: flex;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      color: #6e6659;
+      font-size: 1.5rem;
+      transition: .3s ease;
+    }
+
+    .footer-icons a:hover {
+      background: #b8924c;
+      color: white;
+      box-shadow: 0 6px 15px rgba(185, 146, 76, 0.4);
+      transform: translateY(-5px);
+    }
+
+    /* Policy Row */
+    .footer-policy a {
+      color: #6a5f4c;
+      margin: 0 10px;
+      font-size: .92rem;
+      text-decoration: none;
+      transition: .3s ease;
+    }
+
+    .footer-policy a:hover {
+      color: #b58a42;
+      text-decoration: underline;
+    }
+
+    /* Line */
+    .footer-line {
+      border-color: #cabda5;
+    }
+
+    .footer-copy {
+      color: #7c7363;
       font-size: 0.9rem;
     }
 
-    /* Cột footer */
-    @media (max-width: 767px) {
-      .footer-column {
-        margin-bottom: 20px;
+    /* Responsive */
+    @media(max-width: 576px) {
+      .footer-icons {
+        justify-content: center;
+      }
+      .footer-title, .footer-text, .footer-list li {
+        text-align: center;
+      }
+      .footer-list li {
+        justify-content: center;
       }
     }
   </style>

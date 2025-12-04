@@ -1,245 +1,268 @@
+/* =====================
+   GLOBAL
+====================== */
 body {
   font-family: "Poppins", sans-serif;
-  background: #fff8f0;
+  background: #ffffff;
+  color: #333;
 }
 
-/* ===== HERO SECTION ===== */
-.hero {
-    background-image: url('images/hero-bg.jpg'); /* ảnh nền hero */
-    background-size: cover;
-    background-position: center;
-    height: 60vh;
-    position: relative;
+.fade-in { animation: fadeIn 1s ease; }
+.fade-in-delay { animation: fadeIn 1.3s ease; }
+.fade-in-delay2 { animation: fadeIn 1.6s ease; }
+.fade-up { animation: fadeUp 1s ease; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-.hero h1 {
-    font-size: 3rem;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-.hero p {
-    font-size: 1.25rem;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+
+.shadow-soft {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
-/* ===== CAROUSEL ===== */
-.carousel-inner img {
-    max-height: 450px;
-    object-fit: cover;
+
+section {
+  scroll-margin-top: 80px;
 }
-.carousel-caption {
-    background-color: rgba(0,0,0,0.4);
-    padding: 15px;
-    border-radius: 10px;
-}
-/*hết*/
-.search-bar {
+
+
+/* =====================
+   HERO BANNER
+====================== */
+/* =====================
+   HERO BANNER PREMIUM
+====================== */
+.hero-banner {
+  height: 85vh;
+  min-height: 550px;
+  width: 100%;
   position: relative;
+  overflow: hidden;
+  background: #1a1a1a; /* tạo lớp nền chuyển mượt */
 }
 
-.search-bar i {
+/* Ảnh nền */
+.hero-bg {
   position: absolute;
-  right: 15px;
+  inset: 0;
+  background-image: url("img/bg2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.85) contrast(1.2) saturate(1.2);
+  transition: transform 7s ease, filter 0.5s ease;
+}
+
+/* Hover parallax */
+.hero-banner:hover .hero-bg {
+  transform: scale(1.07);
+  filter: brightness(0.88) contrast(1.25) saturate(1.3);
+}
+
+/* Overlay gradient vàng – đen premium */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.3),
+    rgba(0,0,0,0.65)
+  );
+}
+
+
+/* Nội dung */
+.hero-content {
+  position: relative;
+  z-index: 5;
   top: 50%;
   transform: translateY(-50%);
-  color: #c0392b;
-  cursor: pointer;
-}
-
-.product-card {
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-.product-img {
-  transition: transform 0.4s ease;
-}
-
-.product-img:hover {
-  transform: scale(1.05);
-}
-.card:hover {
-  transform: translateY(-5px);
-  transition: 0.3s ease;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-}
-footer a:hover {
-  color: #ffc107 !important;
-  transform: scale(1.1);
-  transition: 0.2s;
-}
-.card:hover {
-  transform: translateY(-5px);
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-/* ===== TIN TỨC / BLOG ===== */
-section .card img {
-    height: 200px;
-    object-fit: cover;
-}
-section .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-    transition: 0.3s;
-}
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-    .hero p {
-        font-size: 1rem;
-    }
-    #product-list .card img {
-        height: 200px;
-    }
-}
-.nav-link {
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-.nav-link.active {
-  color: #dc3545 !important;
-}
-
-.nav-link.active::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: #dc3545;
-  bottom: 0;
-  left: 0;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #dc3545 !important;
-}
-/* ===== HERO CAROUSEL ===== */
-.hero-carousel {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  margin-bottom: 2rem;
-}
-
-.hero-carousel .carousel-inner {
-  width: 100%;
-}
-
-.hero-carousel .hero-img {
-  width: 100%;
-  height: 80vh;
-  object-fit: cover;
-  transition: transform 1.5s ease;
-}
-
-.carousel-item.active .hero-img {
-  transform: scale(1.05);
-}
-
-.carousel-caption {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 1.2rem 2rem;
-  border-radius: 15px;
-  backdrop-filter: blur(3px);
-}
-
-.text-shadow {
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
-}
-
-/* Hiệu ứng gradient phía dưới carousel */
-.hero-gradient {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 120px;
-  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(255,248,240,1));
-  z-index: 2;
-}
-
-/* Thumbnails */
-.thumbnails img.thumb {
-  width: 100px;
-  height: 60px;
-  object-fit: cover;
-  margin: 5px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
-  border: 2px solid transparent;
-}
-
-.thumbnails img.thumb:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.thumbnails img.thumb.active {
-  border-color: #dc3545;
-  box-shadow: 0 4px 12px rgba(220,53,69,0.4);
-}
-/* Hero Section */
-.hero {
-  height: 100vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.hero-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(65%);
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, rgba(0,0,0,0.3), rgba(0,0,0,0.8));
-  z-index: 1;
-}
-
-.hero-content {
-  z-index: 2;
-  text-shadow: 0 2px 15px rgba(0,0,0,0.6);
-}
-
-.text-glow {
+  padding: 0 20px;
   color: #fff;
-  text-shadow: 0 0 10px #ff5555, 0 0 20px #ff0000;
 }
 
-/* Hiệu ứng nút */
-.hero .btn-danger {
-  border-radius: 50px;
-  transition: 0.3s ease;
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 4px 8px rgba(0,0,0,0.4);
 }
 
-.hero .btn-danger:hover {
-  background: #ff4444;
-  transform: scale(1.05);
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 25px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.35);
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .hero-title { font-size: 2.2rem; }
+  .hero-subtitle { font-size: 1rem; }
+}
+
+
+/* =====================
+   COLLECTIONS
+====================== */
+.collection-card {
+  background: #fff;
+  border-radius: 16px;
+  text-align: center;
+  padding-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: .3s;
+}
+.collection-card:hover {
+  transform: translateY(-8px);
+}
+.collection-img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+}
+
+/* =====================
+   BRAND STORY
+====================== */
+.brand-story {
+  background: linear-gradient(to bottom, #fdf6e3 0%, #e0d7c3 100%);
+  padding: 100px 0;
+}
+
+.brand-story img {
+  width: 100%;
+  height: auto; /* giữ tỉ lệ gốc */
+  max-height: 500px; /* giới hạn chiều cao nếu cần */
+  object-fit: contain; /* hiển thị toàn bộ ảnh */
+  display: block;
+  margin: 0 auto; /* canh giữa ảnh */
+  
+  /* tăng sáng và màu sắc */
+  filter: brightness(1.05) contrast(1.15) saturate(1.15);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.brand-story img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.1) contrast(1.2) saturate(1.2);
+}
+
+
+/* ===================== CUSTOMER FEEDBACK ===================== */
+.customer-feedback {
+  background: #f9f9f9; /* nền nhẹ, tách biệt với phần khác */
+  padding: 100px 0;
+  scroll-margin-top: 80px;
+}
+
+.customer-feedback h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 100px;
+}
+
+/* Cards */
+.customer-feedback .card {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+}
+
+.customer-feedback .card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Ảnh khách hàng */
+.customer-feedback .card-img-top {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: -40px auto 15px auto; /* nổi lên trên card */
+  border: 4px solid #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Card body */
+.customer-feedback .card-body {
+  padding: 30px 20px 20px 20px;
+  text-align: center;
+}
+
+.customer-feedback .card-body p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.customer-feedback .card-body h6 {
+  font-size: 1rem;
+  color: #222;
+}
+
+/* Animation fade-up */
+.fade-up {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeUp 1s forwards;
+}
+
+[data-aos-delay="100"] { animation-delay: 0.1s; }
+[data-aos-delay="200"] { animation-delay: 0.2s; }
+[data-aos-delay="300"] { animation-delay: 0.3s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .hero-content h1 {
+  .customer-feedback h2 {
     font-size: 2rem;
+     margin-bottom: 80px; /* đủ khoảng cách trên mobile */
   }
-  .hero-content p {
-    font-size: 1rem;
+  .customer-feedback .card-img-top {
+    width: 100px;
+    height: 100px;
+    margin-top: -40px;
+  }
+  .customer-feedback .card-body {
+    padding: 20px 15px 15px 15px;
   }
 }
 
+
+
+
+
+/* =====================
+   NEWS
+====================== */
+.news-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+  transition: .3s;
+}
+.news-card:hover {
+  transform: translateY(-8px);
+}
+.news-img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+/* ====================== HERO VIDEO PREMIUM ====================== */ .hero { height: 100vh; position: relative; } .hero-video { width: 100%; height: 100%; object-fit: cover; filter: brightness(60%) contrast(105%); } .overlay { background: rgba(0,0,0,0.55); } .text-glow { text-shadow: 0 0 10px rgba(255,170,80,0.8); } /* Button Premium */ .btn-danger { border-radius: 50px; background: linear-gradient(45deg, #d32f2f, #b71c1c); border: none; padding: 10px 26px; box-shadow: 0 4px 12px rgba(211,47,47,0.4); } .btn-danger:hover { transform: scale(1.06); background: linear-gradient(45deg, #b71c1c, #8e0000); }
 

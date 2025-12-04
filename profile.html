@@ -19,7 +19,7 @@
     </div>
   </div>
 </div>
-
+<div id="footer"></div>
 <script>
  // Nạp header.html vào vị trí #header
 fetch("header.html")
@@ -34,7 +34,12 @@ fetch("header.html")
     if (typeof updateCartCount === "function") updateCartCount();
     if (typeof handleSearch === "function") handleSearch();
   });
-
+  // Nạp footer.html
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
   // Lấy thông tin user từ localStorage
   const user = JSON.parse(localStorage.getItem("user"));
 
