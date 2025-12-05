@@ -3,7 +3,7 @@ const products = [
     id: "1",
     name: "Sự kiện Hồ Hoàn Kiếm",
     price: 280000,
-    image: "img/ẢNH MOCKUP-14.png",
+    image: "img/sp14.png",
     category: "Truyền thống",
     description: "Lồng đèn giấy hoa sen thủ công, được làm từ tre và giấy gió bền đẹp, biểu tượng của sự may mắn và thịnh vượng.",
     materials: `
@@ -43,7 +43,7 @@ const products = [
     id: "2",
     name: "Sự kiện Thánh Gióng",
     price: 350000,
-    image: "img/ẢNH MOCKUP-15.png",
+    image: "img/sp15.png",
     category: "Truyền thống",
     description: "Lồng đèn ngôi sao 5 cánh rực rỡ, phù hợp cho mùa Trung thu và các lễ hội.",
     materials: `
@@ -74,7 +74,7 @@ const products = [
     id: "3",
     name: "Sự kiện sông Bạch Đằng",
     price: 350000,
-    image: "img/ẢNH MOCKUP-16.png",
+    image: "img/sp16.png",
     category: "Truyền thống",
     description: "Lồng đèn giấy hoa sen thủ công, được làm từ tre và giấy gió bền đẹp, biểu tượng của sự may mắn và thịnh vượng.",
     materials: `
@@ -103,7 +103,7 @@ const products = [
     id: "4",
     name: "Sự kiện Sơn Tinh Thủy Tinh",
     price: 400000,
-    image: "img/ẢNH MOCKUP-17.png",
+    image: "img/sp17.png",
     category: "Truyền thống",
     description: "Lồng đèn ngôi sao 5 cánh rực rỡ, phù hợp cho mùa Trung thu và các lễ hội.",
     materials: `
@@ -133,7 +133,7 @@ const products = [
     id: "5",
     name: "Sự kiện Hai Bà Trưng",
     price: 280000,
-    image: "img/ẢNH MOCKUP-18.png",
+    image: "img/sp18.png",
     category: "Truyền thống",
     description: "Lồng đèn ngôi sao 5 cánh rực rỡ, phù hợp cho mùa Trung thu và các lễ hội.",
     materials: `
