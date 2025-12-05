@@ -57,7 +57,7 @@
 
     // ✅ Kiểm tra trạng thái đăng nhập
     const userSection = document.getElementById("user-section");
-    const user = JSON.parse(localStorage.getItem("user"));
+    const user = JSON.parse(sessionStorage.getItem("user"));
 
     if (user && user.name) {
       // Thay thế nút đăng nhập/đăng ký bằng avatar và tên
@@ -79,7 +79,7 @@
       // 🧹 Xử lý đăng xuất
       document.getElementById("logout-btn").addEventListener("click", (e) => {
         e.preventDefault();
-        localStorage.removeItem("user");
+        sessionStorage.removeItem("user");
         location.reload();
       });
     }
@@ -108,6 +108,11 @@
     font-weight: 700;
     letter-spacing: 0.5px;
   }
+.navbar-nav .nav-link {
+  font-size: 1.4rem;     /* tăng size chữ */
+  font-weight: 550;       /* đậm hơn */
+  padding: 8px 14px;      /* thoáng hơn */
+}
 
   /* 🎯 Căn giữa dropdown user */
   #user-section .dropdown-toggle {

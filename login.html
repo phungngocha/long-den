@@ -39,8 +39,7 @@ document.getElementById("login-form").addEventListener("submit", function(e) {
       email: email,
       avatar: "https://cdn-icons-png.flaticon.com/512/219/219983.png"
     };
-
-    localStorage.setItem("user", JSON.stringify(user));
+    sessionStorage.setItem("user", JSON.stringify(user));
     alert("🎉 Đăng nhập thành công!");
     window.location.href = "index.html";
   } else {

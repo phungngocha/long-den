@@ -58,8 +58,8 @@ document.getElementById("register-form").addEventListener("submit", function(e) 
     avatar: "https://cdn-icons-png.flaticon.com/512/219/219983.png"
   };
 
-  // Lưu vào localStorage
-  localStorage.setItem("user", JSON.stringify(user));
+  // Lưu vào sessionStorage
+  sessionStorage.setItem("user", JSON.stringify(user));
 
   alert("✅ Đăng ký thành công! Hệ thống sẽ tự động đăng nhập.");
   window.location.href = "index.html";
@@ -67,3 +67,6 @@ document.getElementById("register-form").addEventListener("submit", function(e) 
 </script>
 </body>
 </html>
+
+
+

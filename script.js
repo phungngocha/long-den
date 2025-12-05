@@ -181,7 +181,7 @@ function handleUserDisplay() {
   const userSection = document.getElementById("user-section");
   if (!userSection) return;
 
-  const user = JSON.parse(localStorage.getItem("user"));
+  const user = JSON.parse(sessionStorage.getItem("user"));
 
   if (user && user.name) {
     userSection.innerHTML = `
@@ -201,7 +201,7 @@ function handleUserDisplay() {
 
     document.getElementById("logout-btn").addEventListener("click", (e) => {
       e.preventDefault();
-      localStorage.removeItem("user");
+      sessionStorage.removeItem("user");
       location.reload();
     });
   }
