@@ -258,17 +258,25 @@ section {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .logo-wrapper { width: 300px; height: 300px; }
-  .brand-image { width: 150px; height: 150px; }
-  .product-orbit { width: 80px; height: 80px; }
-}
-@media (max-width: 576px) {
-  .logo-wrapper { width: 220px; height: 220px; }
-  .brand-image { width: 120px; height: 120px; }
-  .product-orbit { width: 60px; height: 60px; }
-}
 
+
+@media (max-width: 576px) {
+  .logo-wrapper { max-width: 220px; }
+  .brand-image { max-width: 100px; }
+  .product-orbit { max-width: 60px; }
+
+  /* Tăng khoảng cách ảnh từ 70px lên 100px để thưa hơn */
+  .product-orbit:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translateX(100px); }
+  .product-orbit:nth-child(2) { transform: translate(-50%, -50%) rotate(72deg) translateX(100px); }
+  .product-orbit:nth-child(3) { transform: translate(-50%, -50%) rotate(144deg) translateX(100px); }
+  .product-orbit:nth-child(4) { transform: translate(-50%, -50%) rotate(216deg) translateX(100px); }
+  .product-orbit:nth-child(5) { transform: translate(-50%, -50%) rotate(288deg) translateX(100px); }
+
+  .brand-title { font-size: 1.4rem; }
+  .brand-lead { font-size: 0.95rem; }
+  .brand-text { font-size: 0.85rem; }
+  .brand-btn { font-size: 0.85rem; padding: 6px 15px; }
+}
 
 
 
